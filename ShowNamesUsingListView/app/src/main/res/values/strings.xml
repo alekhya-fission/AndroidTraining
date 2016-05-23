@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">ShowNamesUsingListView</string>
+    <string name="login_layout_name">LoginPage</string>
+    <string name="login_btn">Login</string>
+
+
+</resources>

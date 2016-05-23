@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">CheckingUserValidations</string>
+    <string name="first_layout_name">LoginPage</string>
+    <string name="login_btn_name">Login</string>
+    <string name="register_btn_name">Register</string>
+    <string name="title_activity_weloome_page">WeloomePage</string>
+    <string name="title_activity_sign_up">SignUpActivity</string>
+    //secondlayoutvalues
+    <string name="second_layout_name">RegistrationPage</string>
+    <string name="submit_btn_name">signUp</string>
+
+
+
+</resources>
