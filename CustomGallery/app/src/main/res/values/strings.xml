@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">CustomGallery</string>
+    <string name="img_description">Image Description</string><string name="img_original_description">Original Image Description</string>
+</resources>
