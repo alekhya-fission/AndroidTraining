@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">InsertDetailsUsingDatabse</string>
+    <string name="layout_name">StudentDataBase</string>
+
+</resources>
