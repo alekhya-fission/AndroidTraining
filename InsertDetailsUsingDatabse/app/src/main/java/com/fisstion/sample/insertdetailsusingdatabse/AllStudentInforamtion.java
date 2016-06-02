@@ -2,7 +2,6 @@ package com.fisstion.sample.insertdetailsusingdatabse;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -12,6 +11,7 @@ import java.util.ArrayList;
  */
 public class AllStudentInforamtion extends Activity {
     ListView mListView;
+    //creating the arraylist and passed student object
     ArrayList<Student>studentList=new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,16 +20,15 @@ public class AllStudentInforamtion extends Activity {
         mListView=(ListView)findViewById(R.id.lvStudentList);
         StudentInformation studentInformation1=new StudentInformation(getApplicationContext());
         studentList=studentInformation1.getAllContacts();
+        //own adapter student
         StudentData studentData=new StudentData(this,studentList);
         mListView.setAdapter(studentData);
 
 
-       /* for(int i=0;i<studentList.size();i++){
-            Student student=studentList.get(i);
 
 
         }
-*/
+
 
 
 
@@ -46,4 +45,4 @@ public class AllStudentInforamtion extends Activity {
 
 
 
-}
+

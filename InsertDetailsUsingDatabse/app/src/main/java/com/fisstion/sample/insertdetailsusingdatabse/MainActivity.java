@@ -1,11 +1,8 @@
 package com.fisstion.sample.insertdetailsusingdatabse;
 
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.app.Dialog;
-import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -28,12 +25,6 @@ public class MainActivity extends Activity {
         mBtnShowAll=(Button)findViewById(R.id.ShowAllBtn) ;
         mBtnDelete=(Button)findViewById(R.id.DeleteBtn);
         mBtnShowOne=(Button)findViewById(R.id.ShowOneBtn);
-
-       /* StudentInformation studentInformation=new StudentInformation(this);
-        Student student=new Student("alekhya","99948","cse");
-        studentInformation.addStudent(student);
-        Student s= studentInformation.getStudent("alekhya");
-        System.out.println("branchname"+s.getStuBranch());*/
 
         mBtnInsert.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,27 +51,22 @@ public class MainActivity extends Activity {
                     printToastMessage("the data is sucessfully ");
 
                 }
-                mBtnShowAll.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Intent i=new Intent(getApplicationContext(),AllStudentInforamtion.class);
-                        startActivity(i);
-
-
-
-
-                    }
-                });
-
-
-
-
-
-
 
 
             }
         });
+        mBtnShowAll.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent(getApplicationContext(),AllStudentInforamtion.class);
+                startActivity(i);
+
+
+            }
+        });
+
+
+
         mBtnShowOne.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -99,7 +85,7 @@ public class MainActivity extends Activity {
                             printToastMessage("please enter the name to the Add");
                         } else {
                             StudentInformation studentInformation = new StudentInformation(getApplicationContext());
-                            Student name=studentInformation.getStudent("alekhya");
+                            Student name=studentInformation.getStudent(addName);
                             String details = name.getStuName()+"-"+name.getStuPhoneNumber()+"-"+name.stuBranch;
                             printToastMessage(details);
                         }
@@ -109,11 +95,6 @@ public class MainActivity extends Activity {
                 });
 
                 dialog.show();
-
-
-
-
-
 
 
 
@@ -139,7 +120,7 @@ public class MainActivity extends Activity {
                             printToastMessage("please enter the name to the delete");
                         } else {
                             StudentInformation studentInformation = new StudentInformation(getApplicationContext());
-                            studentInformation.deleteContact("alekhya");
+                            studentInformation.deleteContact(deleteName);
                             printToastMessage("your details are deleted sucessfully");
 
                         }
@@ -149,6 +130,7 @@ public class MainActivity extends Activity {
                 });
 
                 dialog.show();
+
 
             }
         });

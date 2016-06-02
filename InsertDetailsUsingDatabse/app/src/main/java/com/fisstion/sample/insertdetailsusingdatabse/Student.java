@@ -9,7 +9,7 @@ public class Student {
     String stuBranch;
 
     //creating the constructor
-    public Student(String stuName,String stuPhoneNumber,String stuBranch){
+    public Student(String stuName,String stuBranch,String stuPhoneNumber){
 
       this.stuName=stuName;
       this.stuPhoneNumber=stuPhoneNumber;
