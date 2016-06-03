@@ -57,11 +57,14 @@ public class StudentInformation extends SQLiteOpenHelper {
         Cursor cursor = db.query(TBL_STUDENT, new String[] {
                         StudentConstants.KEY_NAME, StudentConstants.KEY_PH_NO,StudentConstants.KEY_BRANCH_NAME }, StudentConstants.KEY_NAME + "=?",
                 new String[] { name }, null, null, null, null);
-        if (cursor != null)
+        if (cursor != null&& cursor.getCount()>0){
             cursor.moveToFirst();
+            Student student = new Student(cursor.getString(0),cursor.getString(1),cursor.getString(2));
+            return student;
 
-        Student student = new Student(cursor.getString(0),cursor.getString(1),cursor.getString(2));
-        return student;
+        }
+        return null;
+
 
     }
     public void deleteContact(String sName) {

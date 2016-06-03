@@ -83,11 +83,18 @@ public class MainActivity extends Activity {
                         final String addName = mEdtAddDialog.getText().toString();
                         if (TextUtils.isEmpty(addName)) {
                             printToastMessage("please enter the name to the Add");
-                        } else {
+                        }
+
+                        else {
                             StudentInformation studentInformation = new StudentInformation(getApplicationContext());
                             Student name=studentInformation.getStudent(addName);
-                            String details = name.getStuName()+"-"+name.getStuPhoneNumber()+"-"+name.stuBranch;
-                            printToastMessage(details);
+                            if(name!=null) {
+                                String details = name.getStuName() + "-" + name.getStuPhoneNumber() + "-" + name.stuBranch;
+                                printToastMessage(details);
+                            }
+                            else{
+                                printToastMessage("no data is available");
+                            }
                         }
 
 
