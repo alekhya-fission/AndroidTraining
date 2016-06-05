@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">CheckingUserValidationsUsingSqLiteDataBase</string>
+    <string name="registerationFragmentName">RegisterationPage</string>
+    <string name="signUpButton">SignUp</string>
+    <string name="LoginPageFragmentName">LoginPage</string>
+    <string name="LoginButton">Login</string>
+    <string name="RegistrationButton">Registration</string>
+
+</resources>
