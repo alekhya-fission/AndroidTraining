@@ -69,7 +69,7 @@ public class FragmentRegister extends Fragment {
                 }
                 else{
 
-                    StoringUserDetailes storingUserDetailes=new StoringUserDetailes(getContext());
+                    StoringUserDetailes storingUserDetailes=new StoringUserDetailes(getActivity());
                     User user=new User(saveUserName,savePassword);
                     storingUserDetailes.addUser(user);
                     mRegUserName.setText("");
@@ -92,9 +92,11 @@ public class FragmentRegister extends Fragment {
 
     public interface RegisterController {
         void onRegisterDone();
+
+        void onLoginRegisterClick();
     }
     public void printToastMessage(String message){
-        Toast.makeText(this.getContext(),message, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this.getActivity(),message, Toast.LENGTH_SHORT).show();
 
     }
 

@@ -1,7 +1,9 @@
 package com.fisstion.sample.checkinguservalidationsusingsqlitedatabase;
 
+        import android.content.Intent;
         import android.os.Bundle;
         import android.support.v4.app.Fragment;
+        import android.support.v4.app.FragmentTransaction;
         import android.text.TextUtils;
         import android.view.LayoutInflater;
         import android.view.View;
@@ -44,6 +46,7 @@ public class FragmentLogin extends Fragment {
         mBtnLogin = (Button)loginView.findViewById(R.id.loginBtn);
         mEdtLoginUserName=(EditText)loginView.findViewById(R.id.edtUserName);
         mEdtLoginPassword=(EditText)loginView.findViewById(R.id.edtPassWord);
+        mBtnRegister=(Button)loginView.findViewById(R.id.regButton);
         mBtnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -56,15 +59,28 @@ public class FragmentLogin extends Fragment {
                     printToastMessage("please enter the password");
                 }
                 else {
-                    StoringUserDetailes storingUserDetailes=new StoringUserDetailes(getContext());
+                    StoringUserDetailes storingUserDetailes=new StoringUserDetailes(getActivity());
                       int count=storingUserDetailes.checkUserIsThereOrNot(loginUserName,loginPassword);
                     if(count>0){
                         loginController.onLoginDone();
+
                     }
                     else{
                         printToastMessage("please register");
                     }
                 }
+            }
+        });
+        mBtnRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            /* FragmentRegister register=new FragmentRegister();
+                FragmentTransaction fragmentTransaction=getFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.container,register).addToBackStack(null);
+                fragmentTransaction.commit();
+
+*/
+                loginController.onRegistrationDone();
             }
         });
 
@@ -75,9 +91,11 @@ public class FragmentLogin extends Fragment {
 
     public interface LoginController{
         void onLoginDone();
+        void onRegistrationDone();
     }
+
     public void printToastMessage(String message){
-        Toast.makeText(this.getContext(),message, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this.getActivity(),message, Toast.LENGTH_SHORT).show();
 
     }
 

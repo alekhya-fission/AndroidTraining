@@ -5,5 +5,9 @@
     <string name="LoginPageFragmentName">LoginPage</string>
     <string name="LoginButton">Login</string>
     <string name="RegistrationButton">Registration</string>
+    <string name="showGallery">showGallery</string>
+    <string name="logOut">logOut</string>
+    <string name="welcomeMessage">Welcome To The HomeActivity </string>
+
 
 </resources>
